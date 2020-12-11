@@ -1,0 +1,53 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1607655629731'); /* IE9 */
+  src: url('iconfont.eot?t=1607655629731#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+  url('iconfont.woff?t=1607655629731') format('woff'),
+  url('iconfont.ttf?t=1607655629731') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1607655629731#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_play-circle-solid:before {
+  content: "\e6de";
+}
+
+.icon_activity_tracker:before {
+  content: "\e6d5";
+}
+
+.icon_adaptive_training_guidance:before {
+  content: "\e6d6";
+}
+
+.icon_fitness_level:before {
+  content: "\e6d7";
+}
+
+.icon_sleep:before {
+  content: "\e6d8";
+}
+
+.icon_wireless_mobile_connection:before {
+  content: "\e6d9";
+}
+
+.icon_water_resistant_30m:before {
+  content: "\e6da";
+}
+
+.icon_wrist_based_heart_rate:before {
+  content: "\e6db";
+}
+
+.icon_stress:before {
+  content: "\e6dc";
+}
+

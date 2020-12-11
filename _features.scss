@@ -1,0 +1,53 @@
+.features {
+  padding: 60px 0;
+  background-color: $featuresBG;
+  .flexContainer {
+    align-items: center;
+    .watch {
+      flex: 0 1 50%;
+      height: 500px;
+      background-position: center;
+      background-size: 78%;
+      background-repeat: no-repeat;
+    }
+    .contentBox {
+      flex: 0 1 50%;
+      .watchName {
+        font-size: 2.875rem;
+      }
+      .title {
+        font-size: 2.375rem;
+        color: $title;
+      }
+      p {
+        max-width: 600px;
+      }
+    }
+    &--feature {
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .feature {
+        &:hover {
+          color: #000;
+        }
+        color: $featureBtn;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+          color: inherit;
+          font-size: 6rem;
+        }
+        .desc {
+          font-size: 1.135rem;
+          line-height: 1.375;
+          text-align: center;
+          max-width: 94px;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
