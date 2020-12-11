@@ -109,9 +109,9 @@ window.addEventListener('load', function () {
   init()
 })
 
-const slides = document.querySelectorAll('.swiper-container .swiper-slide')
-console.log(slides)
-const sliderSelector01 = '.swiper-container'
+const slides = document.querySelectorAll('.swiper-container01 .swiper-slide')
+
+const sliderSelector01 = '.swiper-container01'
 const options = {
   // Optional parameters
   direction: 'horizontal',
@@ -145,6 +145,51 @@ const options = {
 const mySwiper = new Swiper(sliderSelector01, options)
 
 mySwiper.init()
+
+const sliderContainer02 = document.querySelector('.swiper-container02')
+const sliderSelector02 = '.swiper-container02'
+const options2 = {
+  init: false,
+  loop: true,
+  speed: 800,
+  slidesPerView: 2, // or 'auto'
+  // spaceBetween: 10,
+  centeredSlides: true,
+  effect: 'coverflow', // 'cube', 'fade', 'coverflow',
+  coverflowEffect: {
+    rotate: 50, // Slide rotate in degrees
+    stretch: 0, // Stretch space between slides (in px)
+    depth: 500, // Depth offset in px (slides translate in Z axis)
+    modifier: 1, // Effect multipler
+    slideShadows: true, // Enables slides shadows
+  },
+  grabCursor: true,
+  parallax: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  // breakpoints: {
+  //   1023: {
+  //     slidesPerView: 1,
+  //     spaceBetween: 0,
+  //   },
+  // },
+  // Events
+  on: {
+    imagesReady: function () {
+      this.el.classList.remove('loading')
+    },
+  },
+}
+
+const mySwiper2 = new Swiper(sliderSelector02, options2)
+
+mySwiper2.init()
 
 const app = Vue.createApp({
   data() {
