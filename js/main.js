@@ -166,7 +166,7 @@ const options2 = {
     stretch: 10, // Stretch space between slides (in px)
     depth: 100, // Depth offset in px (slides translate in Z axis)
     modifier: 1, // Effect multipler
-    slideShadows: false, // Enables slides shadows
+    slideShadows: true, // Enables slides shadows
   },
   grabCursor: true,
   parallax: true,
