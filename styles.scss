@@ -1,12 +1,12 @@
-@import './mixin';
-@import './setting';
-@import './introduction';
-@import './sectionTitle';
-@import './swiper';
-@import './features';
-@import './flexContainer';
-@import './training-guidance';
-@import './swiper02';
+@import "./mixin";
+@import "./setting";
+@import "./introduction";
+@import "./sectionTitle";
+@import "./swiper";
+@import "./features";
+@import "./flexContainer";
+@import "./training-guidance";
+@import "./swiper02";
 
 main {
   z-index: 1;
@@ -24,12 +24,21 @@ header {
         left: 10vw;
 
         img {
+          @include breakpoint("xs") {
+            width: 280px;
+          }
           width: 520px;
         }
       }
       img {
+        @include breakpoint("xs") {
+          width: 200px;
+        }
         width: 400px;
       }
+    }
+    @include breakpoint("xs") {
+      margin-bottom: -30px;
     }
     margin-bottom: -60px;
     position: relative;

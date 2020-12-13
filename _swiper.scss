@@ -1,94 +1,163 @@
-.swiper-container01 {
-  width: 100%;
-  max-width: 1440px;
-  .swiper-wrapper {
-    .swiper-slide {
-      &.active {
+%transition_all_03s {
+  transition: all 0.3s ease;
+}
+%backface_visibility_hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.introduction {
+  .swiper-container01 {
+    width: 100%;
+    max-width: 1440px;
+    .swiper-wrapper {
+      .swiper-slide {
+        &.active {
+          .introBox {
+            .circleBox {
+              .circle {
+                &:first-child {
+                  @include breakpoint("xs") {
+                    // transform: translateX(10px);
+                    z-index: 1;
+                  }
+                  margin-right: -30px;
+                  // transform: translateX(0px);
+                }
+                &:nth-child(2) {
+                  @include breakpoint("xs") {
+                    // transform: translateX(-10px);
+                  }
+                  // transform: translateX(-60px);
+                }
+                // opacity: 1;
+              }
+            }
+          }
+        }
+        display: flex;
+        align-items: center;
+        @include breakpoint("xs") {
+          flex-direction: column;
+        }
+        .suuntoBox {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          flex: 0 1 40%;
+          .watch {
+            background-position: center;
+            background-size: 120%;
+            width: 350px;
+            height: 365px;
+            margin-bottom: -5px;
+          }
+          .color {
+            font-size: 3.375rem;
+          }
+        }
         .introBox {
+          padding: 20px;
+          flex: 0 1 60%;
+          display: flex;
+          flex-direction: column;
           .circleBox {
+            @include breakpoint("xs") {
+              justify-content: center;
+            }
+            display: flex;
+            margin-bottom: 15px;
             .circle {
               &:first-child {
-                @include breakpoint('xs') {
-                  transform: translateX(10px);
-                  z-index: 1;
-                }
-                transform: translateX(0px);
+                z-index: 2;
+                // transform: translateX(-60px);
+                margin-right: -30px;
               }
               &:nth-child(2) {
-                @include breakpoint('xs') {
-                  transform: translateX(-10px);
-                }
-                transform: translateX(-60px);
+                // transform: translateX(60px);
               }
-              opacity: 1;
-            }
-          }
-        }
-      }
-      display: flex;
-      align-items: center;
-      @include breakpoint('xs') {
-        flex-direction: column;
-      }
-      .suuntoBox {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        flex: 0 1 40%;
-        .watch {
-          background-position: center;
-          background-size: 120%;
-          width: 300px;
-          height: 315px;
-          margin-bottom: -5px;
-        }
-        .color {
-          font-size: 3.375rem;
-        }
-      }
-      .introBox {
-        padding: 20px;
-        flex: 0 1 60%;
-        display: flex;
-        flex-direction: column;
-        .circleBox {
-          @include breakpoint('xs') {
-            justify-content: center;
-          }
-          display: flex;
-          margin-bottom: 15px;
-          .circle {
-            &:first-child {
-              z-index: 2;
-              transform: translateX(-60px);
-            }
-            &:nth-child(2) {
-              transform: translateX(60px);
-            }
-            @include breakpoint('xs') {
-              width: 150px;
-              height: 150px;
-            }
-            opacity: 0;
+              @include breakpoint("xs") {
+                width: 150px;
+                height: 150px;
+              }
+              // opacity: 0;
 
-            transition: all 1s ease-in-out;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
+              // transition: all 1s ease-in-out;
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 300px;
+              height: 300px;
+              border-radius: 50%;
+            }
+          }
+          .desc {
+            @include breakpoint("xs") {
+              font-size: 1.2rem;
+              text-align: center;
+              line-height: 1.5;
+            }
+            padding: 10px;
+            font-size: 1.875rem;
+            line-height: 1.375;
           }
         }
-        .desc {
-          @include breakpoint('xs') {
-            font-size: 1.2rem;
-            line-height: 1.2;
+      }
+    }
+
+    &:hover {
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    [class^="swiper-button-"] {
+      width: 44px;
+      opacity: 0;
+      visibility: hidden;
+      @extend %transition_all_03s;
+    }
+    .swiper-button-prev {
+      transform: translateX(50px);
+    }
+    .swiper-button-next {
+      transform: translateX(-50px);
+    }
+  }
+  .swiper-container-horizontal {
+    > .swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        margin: 0 9px;
+        position: relative;
+        width: 12px;
+        height: 12px;
+        background-color: rgb(177, 177, 177);
+        opacity: 0.4;
+        @extend %transition_all_03s;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 18px;
+          height: 18px;
+          transform: translate(-50%, -50%);
+          border: 0px solid rgb(192, 192, 192);
+          border-radius: 50%;
+          @extend %transition_all_03s;
+        }
+        &:hover,
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+        }
+        &.swiper-pagination-bullet-active {
+          &::before {
+            border-width: 1px;
           }
-          padding: 10px;
-          font-size: 1.875rem;
-          line-height: 1.375;
         }
       }
     }

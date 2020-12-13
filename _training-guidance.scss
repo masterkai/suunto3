@@ -3,14 +3,18 @@
   .flexContainer {
     &--fullScreen {
       $height: 80vh;
-      $padding-bottom: 45%;
+      $padding-bottom: 900px;
       $top: 0;
+
       display: flex;
       align-items: baseline;
       max-width: 100%;
       .corner {
+        @include breakpoint("xs") {
+          padding-bottom: 700px;
+        }
         &--top-right-bevel {
-          margin-right: -260px;
+          margin-right: calc(-13.8%);
           z-index: 2;
           img {
             top: $top;
