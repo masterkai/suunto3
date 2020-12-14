@@ -11,6 +11,12 @@
     />
     <link rel="stylesheet" href="./css/iconfont.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery-migrate-1.4.1.min.js"
+    ></script>
+
     <script src="https://unpkg.com/vue@next" defer></script>
   </head>
   <body>
@@ -369,226 +375,228 @@
             為您量身訂做的【智能訓練導引】
           </div>
 
-          <div class="swiper-container swiper-container02 loading">
-            <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                data-swiper-parallax-opacity="0"
-                style="
-                  background-image: linear-gradient(
-                      180deg,
-                      rgba(0, 0, 0, 0) 50%,
-                      rgba(0, 0, 0, 1) 100%
-                    ),
-                    url(/img/suunto3_run.jpg);
-                "
-              >
-                <img
-                  src="/img/slider01.png"
-                  alt=""
-                  class="entity-img"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
+          <div class="wrapper">
+            <div class="swiper-container swiper-container02 loading">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide"
                   data-swiper-parallax-opacity="0"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">自動建立</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    最佳七天訓練計畫
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >根據您的【體適能】目標、實際的【體適能水準】和
-                    最近的訓練紀錄，自動建立包含【持續時間】和【強度區間】的【最佳七天訓練計畫】，逐步增強您的【體適能】表現。
-                  </span>
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(/img/suunto3_run.jpg);
+                  "
+                >
+                  <img
+                    src="/img/slider01.png"
+                    alt=""
+                    class="entity-img"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">自動建立</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      最佳七天訓練計畫
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >根據您的【體適能】目標、實際的【體適能水準】和
+                      最近的訓練紀錄，自動建立包含【持續時間】和【強度區間】的【最佳七天訓練計畫】，逐步增強您的【體適能】表現。
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(/img/suunto3_run4.jpg)"
+                >
+                  <img
+                    src="/img/slider02.png"
+                    alt=""
+                    class="entity-img"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">依您實際的運動狀況</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      即時更新訓練計畫
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >如果您錯過了某次的訓練，或
+                      超額完成了腕錶規劃的訓練量與強度時，不必擔心！Suunto 3
+                      會自動地幫您更新訓練計畫。
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(/img/suunto3_swim4_4x5.jpg)"
+                >
+                  <img
+                    src="/img/slider03.png"
+                    alt=""
+                    class="entity-img"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">在【強度區間】內運動</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      即時強度導引
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >運動時，腕錶會導引您保持在目標的【強度區間】內運動，如果您跑「太快」或「太慢」，或
+                      完成訓練目標時，腕錶都會發出震動與聲響提醒您。
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(/img/suunto3_gym2.jpg);
+                  "
+                >
+                  <img
+                    src="/img/slider04.png"
+                    alt=""
+                    class="entity-img"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">適用【跑步機】等</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      室內健身中心的運動
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >當在沒有 GPS 訊號的室內，從事跑步、步行運動時，Suunto 3
+                      會根據您手臂擺動的頻率，量測出您的速度、配速、與距離。
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(/img/SUUNTO-3-GPS.png)"
+                >
+                  <img
+                    src="/img/slider05.png"
+                    alt=""
+                    class="entity-img"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">手機自動連接</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      GPS訊號
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >Suunto 3 會讀取您手機的 GPS
+                      訊號，計算您的速度、配速、與距離等數據，並紀錄您的運動軌跡。
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(/img/suunto3_work_meeting4.jpg)"
+                >
+                  <img
+                    src="/img/slider06.png"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                    alt=""
+                    class="entity-img"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">了解您的健康狀況</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      【體適能】水準與年齡
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >運動過後，【最大攝氧量】( VO2max )
+                      讀數，揭露您【體適能】水準與身體年齡。
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(/img/suunto3_suunto_app_sharing3.jpg);
+                  "
+                >
+                  <img
+                    src="/img/SUUNTO-3-CUSTOM-Mode.png"
+                    data-swiper-parallax-y="-30%"
+                    data-swiper-parallax-scale="0.8"
+                    data-swiper-parallax-opacity="0"
+                    alt=""
+                    class="entity-img entity-img--lastChild"
+                  />
+                  <div class="content" data-swiper-parallax-opacity="0">
+                    <div class="miniTitle">讓腕錶更符合需求</div>
+                    <p
+                      class="title"
+                      data-swiper-parallax="-30%"
+                      data-swiper-parallax-scale=".7"
+                    >
+                      自訂【運動模式】<br />與【數據顯示】
+                    </p>
+                    <span class="caption" data-swiper-parallax="-20%"
+                      >支援速度、距離、配速、心率、功率、PTE、EPOC…等，多達百種以上的運動數據選擇，獲得您運動最需要的數據與分析。
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div
-                class="swiper-slide"
-                style="background-image: url(/img/suunto3_run4.jpg)"
-              >
-                <img
-                  src="/img/slider02.png"
-                  alt=""
-                  class="entity-img"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
-                  data-swiper-parallax-opacity="0"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">依您實際的運動狀況</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    即時更新訓練計畫
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >如果您錯過了某次的訓練，或
-                    超額完成了腕錶規劃的訓練量與強度時，不必擔心！Suunto 3
-                    會自動地幫您更新訓練計畫。
-                  </span>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="background-image: url(/img/suunto3_swim4_4x5.jpg)"
-              >
-                <img
-                  src="/img/slider03.png"
-                  alt=""
-                  class="entity-img"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
-                  data-swiper-parallax-opacity="0"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">在【強度區間】內運動</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    即時強度導引
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >運動時，腕錶會導引您保持在目標的【強度區間】內運動，如果您跑「太快」或「太慢」，或
-                    完成訓練目標時，腕錶都會發出震動與聲響提醒您。
-                  </span>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="
-                  background-image: linear-gradient(
-                      180deg,
-                      rgba(0, 0, 0, 0) 50%,
-                      rgba(0, 0, 0, 1) 100%
-                    ),
-                    url(/img/suunto3_gym2.jpg);
-                "
-              >
-                <img
-                  src="/img/slider04.png"
-                  alt=""
-                  class="entity-img"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
-                  data-swiper-parallax-opacity="0"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">適用【跑步機】等</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    室內健身中心的運動
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >當在沒有 GPS 訊號的室內，從事跑步、步行運動時，Suunto 3
-                    會根據您手臂擺動的頻率，量測出您的速度、配速、與距離。
-                  </span>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="background-image: url(/img/SUUNTO-3-GPS.png)"
-              >
-                <img
-                  src="/img/slider05.png"
-                  alt=""
-                  class="entity-img"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
-                  data-swiper-parallax-opacity="0"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">手機自動連接</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    GPS訊號
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >Suunto 3 會讀取您手機的 GPS
-                    訊號，計算您的速度、配速、與距離等數據，並紀錄您的運動軌跡。
-                  </span>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="background-image: url(/img/suunto3_work_meeting4.jpg)"
-              >
-                <img
-                  src="/img/slider06.png"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
-                  data-swiper-parallax-opacity="0"
-                  alt=""
-                  class="entity-img"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">了解您的健康狀況</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    【體適能】水準與年齡
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >運動過後，【最大攝氧量】( VO2max )
-                    讀數，揭露您【體適能】水準與身體年齡。
-                  </span>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="
-                  background-image: linear-gradient(
-                      180deg,
-                      rgba(0, 0, 0, 0) 50%,
-                      rgba(0, 0, 0, 1) 100%
-                    ),
-                    url(/img/suunto3_suunto_app_sharing3.jpg);
-                "
-              >
-                <img
-                  src="/img/SUUNTO-3-CUSTOM-Mode.png"
-                  data-swiper-parallax-y="-30%"
-                  data-swiper-parallax-scale="0.8"
-                  data-swiper-parallax-opacity="0"
-                  alt=""
-                  class="entity-img entity-img--lastChild"
-                />
-                <div class="content" data-swiper-parallax-opacity="0">
-                  <div class="miniTitle">讓腕錶更符合需求</div>
-                  <p
-                    class="title"
-                    data-swiper-parallax="-30%"
-                    data-swiper-parallax-scale=".7"
-                  >
-                    自訂【運動模式】<br />與【數據顯示】
-                  </p>
-                  <span class="caption" data-swiper-parallax="-20%"
-                    >支援速度、距離、配速、心率、功率、PTE、EPOC…等，多達百種以上的運動數據選擇，獲得您運動最需要的數據與分析。
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
           </div>
         </section>
 
@@ -614,11 +622,109 @@
             </div>
           </div>
         </section>
+        <section id="product-common-1">
+          <div id="slideContainer">
+            <div id="heart-rate" class="slide">
+              <div class="slide-wrapper">
+                <div class="slide-left">
+                  <div class="slide-txt">
+                    <h2>心率監測</h2>
+                    <p>
+                      每日24小時不間斷的監測，從心率統計數據了解自己的身體狀況，並記錄你每分鐘呼吸頻率，讓你隨時傾聽身體的聲音，輕鬆掌握體能。
+                    </p>
+                  </div>
+                </div>
+                <div class="slide-right">
+                  <img class="slide-image" src="img/product_slide_1_m.png" />
+                </div>
+              </div>
+            </div>
+            <div id="pressure" class="slide">
+              <div class="slide-wrapper">
+                <div class="slide-left">
+                  <div class="slide-txt">
+                    <h2>壓力指數</h2>
+                    <p>
+                      分析心率變化來估算你的壓力指數，當壓力等級過高時，搭配使用呼吸活動，舒緩緊繃的身心。
+                    </p>
+                  </div>
+                </div>
+                <div class="slide-right">
+                  <img class="slide-image" src="img/product_slide_2_m.png" />
+                </div>
+              </div>
+            </div>
+            <div id="body-battery" class="slide">
+              <div class="slide-wrapper">
+                <div class="slide-left">
+                  <div class="slide-txt">
+                    <h2>身體能量指數</h2>
+                    <p>
+                      如同身體的電池，充足睡眠之後身體充滿電，隨著活動的進行電力逐漸下降，試著休息一下，儲備足夠能量再接受挑戰。
+                    </p>
+                  </div>
+                </div>
+                <div class="slide-right">
+                  <img class="slide-image" src="img/product_slide_3_m.png" />
+                </div>
+              </div>
+            </div>
+            <div id="sleep" class="slide">
+              <div class="slide-wrapper">
+                <div class="slide-left">
+                  <div class="slide-txt">
+                    <h2>睡眠監測</h2>
+                    <p>
+                      偵測你的睡眠狀況，監控翻身次數和心率變化，計算血液中的含氧濃度，記錄深淺眠與REM快速動眼期，每日都有專屬睡眠報告。
+                    </p>
+                  </div>
+                </div>
+                <div class="slide-right">
+                  <img class="slide-image" src="img/product_slide_4_m.png" />
+                </div>
+              </div>
+            </div>
+            <div id="mct" class="slide">
+              <div class="slide-wrapper">
+                <div class="slide-left">
+                  <div class="slide-txt">
+                    <h2>月經週期追蹤</h2>
+                    <p>
+                      姊妹們的專屬功能！輕鬆記錄經期開始和結束日期、生理與心理症狀，以及個人狀態心情備註等週期細節，手腕上就能讀取週期資訊。
+                    </p>
+                  </div>
+                </div>
+                <div class="slide-right">
+                  <img class="slide-image" src="img/product_slide_5_m.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="smart-assistant wow fadeIn" data-wow-duration="1s">
+          <div class="wrapper">
+            <div
+              class="flex-image"
+              style="background-image: url(/img/smart-notifications_1.webp)"
+            ></div>
+            <div class="txt">
+              <h2>聰明連線 全能智慧秘書</h2>
+              <p>
+                手錶直接讀訊息，智慧手機開啟藍牙連線，直接在手錶上查看即時的來電提示、訊息通知、E-mail和更多社群推播。
+              </p>
+            </div>
+          </div>
+        </section>
       </article>
     </main>
-
+    <script type="text/javascript" src="js/wow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js"></script>
+    <script src="js/scroll/TweenMax.min.js"></script>
+    <script src="js/scroll/ScrollMagic.min.js"></script>
+    <script src="js/scroll/animation.gsap.min.js"></script>
+    <script src="js/scroll/ScrollToPlugin.min.js"></script>
+    <script src="js/scroll/debug.addIndicators.min.js"></script>
     <script src="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/main.js" defer></script>
