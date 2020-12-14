@@ -14,7 +14,7 @@ $bdrs: 20px;
   padding: 0;
 }
 .training-guidance {
-  @include breakpoint("xs") {
+  @include breakpoint('xs') {
     padding: 0 20px;
   }
   .swiper-container02 {
@@ -55,7 +55,11 @@ $bdrs: 20px;
         background-color: rgb(255, 255, 255);
         border: 1px solid $featureBtn;
         .entity-img {
-          @include breakpoint("xs") {
+          &--lastChild {
+            padding-top: 30px;
+            height: 92%;
+          }
+          @include breakpoint('xs') {
             height: 68%;
             padding-top: 30px;
           }
@@ -66,7 +70,7 @@ $bdrs: 20px;
           height: 80%;
         }
         .content {
-          @include breakpoint("xs") {
+          @include breakpoint('xs') {
             bottom: 5%;
             width: 80%;
           }
@@ -77,23 +81,30 @@ $bdrs: 20px;
           padding-left: 5%;
           color: white;
           text-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.85);
+          .miniTitle {
+            font-size: 1.6rem;
+            font-weight: bold;
+          }
           .title {
             font-size: 2.6em;
             font-weight: bold;
-            margin-bottom: 30px;
-            @include breakpoint("xs") {
+            margin-bottom: 20px;
+            @include breakpoint('xs') {
               margin-bottom: 0px;
             }
           }
           .caption {
+            // padding: 10px;
+            // border-radius: 15px;
+            // background-color: rgba($color: #000000, $alpha: 0.5);
             display: block;
-            font-size: 13px;
+            font-size: 16px;
             line-height: 1.4;
           }
         }
       }
     }
-    [class^="swiper-button-"] {
+    [class^='swiper-button-'] {
       width: 44px;
       opacity: 0;
       visibility: hidden;
@@ -117,7 +128,7 @@ $bdrs: 20px;
         opacity: 0.4;
         @extend %transition_all_03s;
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           top: 50%;
           left: 50%;
