@@ -1,33 +1,39 @@
 .smart-assistant {
-  background: #fff;
-  padding-top: 100px;
-  width: 100%;
-  position: relative;
+  .flexContainer {
+    &--fullScreen {
+      max-width: 100%;
+      div {
+        width: 100%;
+        height: 480px;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    &--fullHeight {
+      div {
+        height: 784px;
+      }
+    }
+  }
   .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    padding: 40px;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     .flex-image {
-      @include breakpoint("xs") {
+      &--cover {
+        background-size: cover;
+      }
+      @include breakpoint('xs') {
         flex: 1 1 100%;
         max-height: 100%;
         height: 60vw;
       }
-      -webkit-box-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
-      height: 50vw;
-      background-size: cover;
-      background-position: center;
-      max-height: 550px;
+      flex: 1 1 100%;
     }
     .txt {
-      @include breakpoint("xs") {
+      @include breakpoint('xs') {
         flex: 1 1 100%;
         text-align: center;
       }
@@ -40,5 +46,16 @@
         font-size: 3rem;
       }
     }
+    img {
+      flex: 0 1 auto;
+      max-width: 800px;
+      height: auto;
+      width: 100%;
+      margin: 30px auto;
+    }
   }
+  background: #fff;
+  width: 100%;
+  position: relative;
+  padding: 0;
 }

@@ -1,0 +1,60 @@
+header {
+  .product {
+    &__img {
+      &:nth-child(1) {
+        padding-right: 16vw;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        left: 10vw;
+
+        img {
+          @include breakpoint('xs') {
+            width: 280px;
+          }
+          width: 520px;
+        }
+      }
+      img {
+        @include breakpoint('xs') {
+          width: 200px;
+        }
+        width: 400px;
+      }
+    }
+    @include breakpoint('xs') {
+      margin-bottom: -30px;
+    }
+    margin-bottom: -60px;
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  h1 {
+    font-family: var(--font-headings);
+    font-weight: normal;
+    color: #000;
+    font-size: 2rem;
+    line-height: 1.5;
+    z-index: 1;
+    margin-bottom: 0;
+    pointer-events: none;
+    text-align: center;
+    margin-bottom: 20px;
+    span {
+      display: block;
+    }
+  }
+  background-color: $headerColor;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  perspective: 1000px;
+  z-index: 2;
+}
