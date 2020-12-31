@@ -16,8 +16,12 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     li {
       a {
+        @include breakpoint('xs') {
+          font-size: 0.6rem;
+        }
         color: rgba($color: white, $alpha: 0.5);
         text-decoration: none;
       }
@@ -30,6 +34,12 @@ nav {
         a {
           color: rgba($color: white, $alpha: 1);
         }
+      }
+      @include breakpoint('xs') {
+        text-align: center;
+        padding: 10px 0;
+        width: 20%;
+        line-height: 1;
       }
       cursor: pointer;
       padding: 10px;

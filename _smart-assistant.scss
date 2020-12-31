@@ -47,6 +47,9 @@
       }
     }
     img {
+      &.smallerImg {
+        max-width: 600px;
+      }
       flex: 0 1 auto;
       max-width: 800px;
       height: auto;

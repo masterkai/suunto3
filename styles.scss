@@ -14,6 +14,8 @@
 @import './recovery';
 @import './product-common';
 @import './smart-assistant';
+@import './corner';
+@import './gotop';
 main {
   z-index: 1;
   position: relative;
@@ -82,13 +84,13 @@ main {
 .hg__right .hg__image:nth-child(2) {
   top: 27vh;
   left: auto;
-  right: 10vw;
+  right: 5vw;
   z-index: 1;
 }
 .hg__right .hg__image:nth-child(3) {
   top: 56vh;
   left: auto;
-  right: 19vw;
+  right: 14vw;
   width: 16vw;
   padding-bottom: 20vw;
 }

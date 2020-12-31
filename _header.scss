@@ -47,6 +47,11 @@ header {
     span {
       display: block;
     }
+    .fw7 {
+      @include breakpoint('xs') {
+        max-width: 210px;
+      }
+    }
   }
   background-color: $headerColor;
   min-height: 100vh;

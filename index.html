@@ -10,13 +10,9 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/iconfont.css" />
+    <link rel="stylesheet" href="./css/venobox.css" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="js/jquery-migrate-1.4.1.min.js"
-    ></script>
-
+    <script src="js/lazysizes.min.js" async=""></script>
     <script src="https://unpkg.com/vue@next" defer></script>
   </head>
   <body>
@@ -24,10 +20,16 @@
       <header data-color="#ACB7AE">
         <div class="product">
           <div class="product__img product__img__perspective">
-            <img src="/img/SUUNTO-3-SLATE-GREY-Perspective-View.png" />
+            <img
+              data-src="img/SUUNTO-3-SLATE-GREY-Perspective-View.png"
+              class="lazyload"
+            />
           </div>
           <div class="product__img product__img__FrontView">
-            <img src="/img/SUUNTO-3-MOSS-GREY-Front-View.png" />
+            <img
+              data-src="img/SUUNTO-3-MOSS-GREY-Front-View.png"
+              class="lazyload"
+            />
           </div>
         </div>
         <h1>
@@ -39,35 +41,37 @@
         <div class="header__gallery">
           <div class="hg__left">
             <div class="hg__image hg__image--l">
-              <img src="./img/suunto3_swim4_4x5.jpg" />
+              <img data-src="img/suunto3_swim4_4x5.jpg" class="lazyload" />
             </div>
             <div class="hg__image hg__image--m">
-              <img src="./img/suunto3_commute5.jpg" />
+              <img data-src="img/suunto3_commute5.jpg" class="lazyload" />
             </div>
             <div class="hg__image hg__image--s">
-              <img src="./img/suunto3_commute2.jpg" />
+              <img data-src="img/suunto3_commute2.jpg" class="lazyload" />
             </div>
           </div>
           <div class="hg__right">
             <div class="hg__image hg__image--l">
-              <img src="./img/suunto3_run5.jpg" />
+              <img data-src="img/suunto3_run5.jpg" class="lazyload" />
             </div>
             <div class="hg__image hg__image--m">
-              <img src="./img/suunto3_run3.jpg" />
+              <img data-src="img/suunto3_run3.jpg" class="lazyload" />
             </div>
             <div class="hg__image hg__image--s">
-              <img src="./img/suunto3_run4.jpg" />
+              <img data-src="img/suunto3_run4.jpg" class="lazyload" />
             </div>
           </div>
         </div>
       </header>
-      <nav>
+      <nav id="nav">
         <ul>
           <li id="introbtn" class="active">
             <a href="#scandinavian-design">北歐設計</a>
           </li>
           <li><a href="#training-guide">智能訓練導引</a></li>
-          <li><a href="#activeTitle">運動需求</a></li>
+          <li id="sports-needs">
+            <a href="#fullfillYourSportsNeeds">運動需求</a>
+          </li>
           <li><a href="#activity-recovery">活動與恢復</a></li>
           <li><a href="#suunto-app">SUUNTO APP</a></li>
         </ul>
@@ -76,9 +80,9 @@
         <section id="scandinavian-design" class="introduction">
           <div class="sectionTitle">北歐設計，均衡您的運動生活</div>
           <div class="intro">
-            全新的SUUNTO 3，<br />
-            擷取自北歐的自然風光作為設計的元素，芬蘭設計與製造。<br />
-            讓您體驗自然與和諧的運動生活，就像在寧靜的北歐大地，<br />
+            全新的 SUUNTO 3，<br />
+            擷取自北歐的自然風光作為設計的元素，芬蘭設計與製造。
+            讓您體驗自然與和諧的運動生活，就像在寧靜的北歐大地，
             大自然與都市和諧地並存那般。
           </div>
           <div class="swiper-container swiper-container01">
@@ -93,7 +97,7 @@
                     data-swiper-parallax-opacity="0.5"
                     data-swiper-parallax-scale="0.15"
                     style="
-                      background-image: url(/img/SUUNTO-3-MOSS-GREY-Front-View.png);
+                      background-image: url(img/SUUNTO-3-MOSS-GREY-Front-View.png);
                     "
                   ></div>
                   <div
@@ -113,7 +117,7 @@
                       data-swiper-parallax-opacity="0"
                       data-swiper-parallax-scale="0.45"
                       style="
-                        background-image: url(/img/suunto3_commute.jpg);
+                        background-image: url(img/suunto3_commute.jpg);
                         background-position: center bottom;
                         background-size: 120%;
                       "
@@ -123,7 +127,7 @@
                       data-swiper-parallax-x="200%"
                       data-swiper-parallax-opacity="0"
                       data-swiper-parallax-scale="0.45"
-                      style="background-image: url(/img/suunto3_commute3.jpg)"
+                      style="background-image: url(img/suunto3_commute3.jpg)"
                     ></div>
                   </div>
                   <div class="desc">
@@ -139,102 +143,7 @@
                     data-swiper-parallax-opacity="0.5"
                     data-swiper-parallax-scale="0.15"
                     style="
-                      background-image: url(/img/SUUNTO-3-GRANITE-RED-Front-View.png);
-                    "
-                  ></div>
-                  <div
-                    class="color"
-                    data-swiper-parallax-y="-200%"
-                    data-swiper-parallax-opacity="0.5"
-                    data-swiper-parallax-scale="0.15"
-                  >
-                    花崗紅
-                  </div>
-                </div>
-                <div class="introBox">
-                  <div class="circleBox">
-                    <div
-                      class="circle"
-                      data-swiper-parallax-x="-50%"
-                      data-swiper-parallax-opacity="0"
-                      data-swiper-parallax-scale="0.45"
-                      style="
-                        background-image: url(/img/suunto3_work_meeting4.jpg);
-                        background-position: center;
-                        background-size: 110%;
-                      "
-                    ></div>
-                    <div
-                      class="circle"
-                      data-swiper-parallax-x="200%"
-                      data-swiper-parallax-opacity="0"
-                      data-swiper-parallax-scale="0.45"
-                      style="
-                        background-image: url(/img/suunto3_on-wrist_watch_face.jpg);
-                      "
-                    ></div>
-                  </div>
-                  <div class="desc">
-                    苔蘚灰的靈感來自於芬蘭森林中長滿苔蘚的苔蘚，<br />春天的雪融化後就露出了苔蘚。
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="suuntoBox">
-                  <div
-                    class="watch"
-                    data-swiper-parallax-y="10%"
-                    data-swiper-parallax-opacity="0.5"
-                    data-swiper-parallax-scale="0.15"
-                    style="
-                      background-image: url(/img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png);
-                    "
-                  ></div>
-                  <div
-                    class="color"
-                    data-swiper-parallax-y="-200%"
-                    data-swiper-parallax-opacity="0.5"
-                    data-swiper-parallax-scale="0.15"
-                  >
-                    板岩復古銅
-                  </div>
-                </div>
-                <div class="introBox">
-                  <div class="circleBox">
-                    <div
-                      class="circle"
-                      data-swiper-parallax-x="-50%"
-                      data-swiper-parallax-opacity="0"
-                      data-swiper-parallax-scale="0.45"
-                      style="
-                        background-image: url(/img/suunto3_work_meeting5.jpg);
-                        background-position: center;
-                      "
-                    ></div>
-                    <div
-                      class="circle"
-                      data-swiper-parallax-x="200%"
-                      data-swiper-parallax-opacity="0"
-                      data-swiper-parallax-scale="0.45"
-                      style="
-                        background-image: url(/img/suunto3_on-wrist_weekly_training_plan.jpg);
-                      "
-                    ></div>
-                  </div>
-                  <div class="desc">
-                    苔蘚灰的靈感來自於芬蘭森林中長滿苔蘚的苔蘚，<br />春天的雪融化後就露出了苔蘚。
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="suuntoBox">
-                  <div
-                    class="watch"
-                    data-swiper-parallax-y="10%"
-                    data-swiper-parallax-opacity="0.5"
-                    data-swiper-parallax-scale="0.15"
-                    style="
-                      background-image: url(/img/SUUNTO-3-SLATE-GREY-Front-View.png);
+                      background-image: url(img/SUUNTO-3-SLATE-GREY-Front-View.png);
                     "
                   ></div>
                   <div
@@ -254,7 +163,7 @@
                       data-swiper-parallax-opacity="0"
                       data-swiper-parallax-scale="0.45"
                       style="
-                        background-image: url(/img/suunto3_run4.jpg);
+                        background-image: url(img/suunto3_run4.jpg);
                         background-position: center;
                       "
                     ></div>
@@ -263,11 +172,11 @@
                       data-swiper-parallax-x="200%"
                       data-swiper-parallax-opacity="0"
                       data-swiper-parallax-scale="0.45"
-                      style="background-image: url(/img/suunto3_run5.jpg)"
+                      style="background-image: url(img/suunto3_run5.jpg)"
                     ></div>
                   </div>
                   <div class="desc">
-                    苔蘚灰的靈感來自於芬蘭森林中長滿苔蘚的苔蘚，<br />春天的雪融化後就露出了苔蘚。
+                    堅韌、可靠、自然風格的時尚感，經典設計歷久不衰<br />－【板岩灰】正是延續了這個傳統。
                   </div>
                 </div>
               </div>
@@ -279,7 +188,100 @@
                     data-swiper-parallax-opacity="0.5"
                     data-swiper-parallax-scale="0.15"
                     style="
-                      background-image: url(/img/SUUNTO-3-PEBBLE-WHITE-Front-View.png);
+                      background-image: url(img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png);
+                    "
+                  ></div>
+                  <div
+                    class="color"
+                    data-swiper-parallax-y="-200%"
+                    data-swiper-parallax-opacity="0.5"
+                    data-swiper-parallax-scale="0.15"
+                  >
+                    板岩復古銅
+                  </div>
+                </div>
+                <div class="introBox">
+                  <div class="circleBox">
+                    <div
+                      class="circle"
+                      data-swiper-parallax-x="-50%"
+                      data-swiper-parallax-opacity="0"
+                      data-swiper-parallax-scale="0.45"
+                      style="
+                        background-image: url(img/suunto3_work_meeting5.jpg);
+                        background-position: center;
+                      "
+                    ></div>
+                    <div
+                      class="circle"
+                      data-swiper-parallax-x="200%"
+                      data-swiper-parallax-opacity="0"
+                      data-swiper-parallax-scale="0.45"
+                      style="background-image: url(img/suunto3_on-wrist2.jpg)"
+                    ></div>
+                  </div>
+                  <div class="desc">
+                    板岩灰的優雅，搭配溫暖的復古銅色，【板岩復古銅】這美麗的配色，<br />截取自於大自然的調色盤。
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="suuntoBox">
+                  <div
+                    class="watch"
+                    data-swiper-parallax-y="10%"
+                    data-swiper-parallax-opacity="0.5"
+                    data-swiper-parallax-scale="0.15"
+                    style="
+                      background-image: url(img/SUUNTO-3-GRANITE-RED-Front-View.png);
+                    "
+                  ></div>
+                  <div
+                    class="color"
+                    data-swiper-parallax-y="-200%"
+                    data-swiper-parallax-opacity="0.5"
+                    data-swiper-parallax-scale="0.15"
+                  >
+                    花崗紅
+                  </div>
+                </div>
+                <div class="introBox">
+                  <div class="circleBox">
+                    <div
+                      class="circle"
+                      data-swiper-parallax-x="-50%"
+                      data-swiper-parallax-opacity="0"
+                      data-swiper-parallax-scale="0.45"
+                      style="
+                        background-image: url(img/suunto3_work_meeting4.jpg);
+                        background-position: center;
+                        background-size: 110%;
+                      "
+                    ></div>
+                    <div
+                      class="circle"
+                      data-swiper-parallax-x="200%"
+                      data-swiper-parallax-opacity="0"
+                      data-swiper-parallax-scale="0.45"
+                      style="
+                        background-image: url(img/suunto3_on-wrist_watch_face.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="desc">
+                    【花崗紅】的靈感，來自於矗立在芬蘭海岸的花崗岩，堅固可靠，<br />面對海水和其他自然環境，仍屹立不搖。
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="suuntoBox">
+                  <div
+                    class="watch"
+                    data-swiper-parallax-y="10%"
+                    data-swiper-parallax-opacity="0.5"
+                    data-swiper-parallax-scale="0.15"
+                    style="
+                      background-image: url(img/SUUNTO-3-PEBBLE-WHITE-Front-View.png);
                     "
                   ></div>
                   <div
@@ -299,7 +301,7 @@
                       data-swiper-parallax-opacity="0"
                       data-swiper-parallax-scale="0.45"
                       style="
-                        background-image: url(/img/suunto3_social4.jpg);
+                        background-image: url(img/suunto3_run.jpg);
                         background-position: center;
                       "
                     ></div>
@@ -309,12 +311,12 @@
                       data-swiper-parallax-opacity="0"
                       data-swiper-parallax-scale="0.45"
                       style="
-                        background-image: url(/img/suunto3_on-wrist_weekly_training_plan2.jpg);
+                        background-image: url(img/suunto3_on-wrist_weekly_training_plan2.jpg);
                       "
                     ></div>
                   </div>
                   <div class="desc">
-                    苔蘚灰的靈感來自於芬蘭森林中長滿苔蘚的苔蘚，<br />春天的雪融化後就露出了苔蘚。
+                    就像被波羅的海沖擊打磨成型的鵝卵石，淡灰色的【鵝卵石白】<br />，也象徵著北歐的根源。
                   </div>
                 </div>
               </div>
@@ -336,13 +338,13 @@
               "
             ></div>
             <div class="contentBox">
-              <div class="watchName">SUUNTO 3</div>
+              <div class="watchName proxima">SUUNTO 3</div>
               <div class="title">
                 輕巧耐用，<br />
                 配置【智能訓練導引】的運動腕錶
               </div>
               <p>
-                當全新的 Suunto
+                全新的 Suunto
                 3，在芬蘭設計與精密製造．擷取自北歐的自然風光作為設計的元素，推出五種全新自然風格的腕錶顏色。配置個人化的【智能訓練導引】功能，與包含【步數】、【睡眠品質】、【壓力與恢復】…等的全天候活動監測，全新
                 Suunto 3
                 的設計，是為了讓您體驗自然與和諧的運動生活，就像在寧靜的北歐大地，大自然與都市和諧地並存那般，這也啟發了我們產品的設計靈感。
@@ -362,22 +364,40 @@
           </div>
         </section>
         <section id="training-guide" class="training-guidance">
-          <div class="flexContainer flexContainer--fullScreen">
+          <div
+            id="cg1"
+            class="flexContainer flexContainer--fullScreen cornerContainer"
+          >
             <div class="corner corner--top-right-bevel">
-              <span class="iconfont icon_play-circle-solid">
-                <div class="title">【北歐生活篇】</div>
-                <div class="subtitle">赫爾辛基的和諧</div>
-              </span>
-              <img src="/img/suunto3_run.jpg" alt="" />
+              <a
+                href="https://youtu.be/CssxvJKIL80?autoplay=1"
+                class="venobox"
+                data-type="youtube"
+                data-gall="gall-video"
+              >
+                <span class="iconfont icon_play-circle-solid">
+                  <div class="title">【北歐生活篇】</div>
+                  <div class="subtitle">赫爾辛基的和諧</div>
+                </span>
+              </a>
+              <img data-src="img/suunto3_run.jpg" alt="" class="lazyload" />
             </div>
             <div class="corner corner--bottom-left-bevel">
-              <span class="iconfont icon_play-circle-solid">
-                <div class="title">【智能訓練導引】</div>
-                <div class="subtitle">為您量身訂做的訓練計劃</div>
-              </span>
+              <a
+                href="https://youtu.be/CssxvJKIL80?autoplay=1"
+                class="venobox"
+                data-type="youtube"
+                data-gall="gall-video"
+              >
+                <span class="iconfont icon_play-circle-solid">
+                  <div class="title">【智能訓練導引】</div>
+                  <div class="subtitle">為您量身訂做的訓練計劃</div>
+                </span>
+              </a>
               <img
-                src="/img/suunto3_on-wrist_weekly_training_plan.jpg"
+                data-src="img/suunto3_on-wrist_weekly_training_plan.jpg"
                 alt=""
+                class="lazyload"
               />
             </div>
           </div>
@@ -397,13 +417,13 @@
                         rgba(0, 0, 0, 0) 50%,
                         rgba(0, 0, 0, 1) 100%
                       ),
-                      url(/img/suunto3_run.jpg);
+                      url(img/suunto3_run.jpg);
                   "
                 >
                   <img
-                    src="/img/slider01.png"
+                    data-src="img/slider01.png"
                     alt=""
-                    class="entity-img"
+                    class="entity-img lazyload"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
@@ -425,12 +445,19 @@
                 </div>
                 <div
                   class="swiper-slide"
-                  style="background-image: url(/img/suunto3_run4.jpg)"
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(img/suunto3_run4.jpg);
+                  "
                 >
                   <img
-                    src="/img/slider02.png"
+                    data-src="img/slider02.png"
                     alt=""
-                    class="entity-img"
+                    class="entity-img lazyload"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
@@ -453,12 +480,19 @@
                 </div>
                 <div
                   class="swiper-slide"
-                  style="background-image: url(/img/suunto3_swim4_4x5.jpg)"
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(img/suunto3_run2.jpg);
+                  "
                 >
                   <img
-                    src="/img/slider03.png"
+                    data-src="img/slider03.png"
                     alt=""
-                    class="entity-img"
+                    class="entity-img lazyload"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
@@ -479,6 +513,7 @@
                   </div>
                 </div>
                 <div
+                  id="fullfillYourSportsNeeds"
                   class="swiper-slide"
                   style="
                     background-image: linear-gradient(
@@ -486,13 +521,13 @@
                         rgba(0, 0, 0, 0) 50%,
                         rgba(0, 0, 0, 1) 100%
                       ),
-                      url(/img/suunto3_gym2.jpg);
+                      url(img/suunto3_gym2.jpg);
                   "
                 >
                   <img
-                    src="/img/slider04.png"
+                    data-src="img/slider04.png"
                     alt=""
-                    class="entity-img"
+                    class="entity-img lazyload"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
@@ -514,12 +549,19 @@
                 </div>
                 <div
                   class="swiper-slide"
-                  style="background-image: url(/img/SUUNTO-3-GPS.png)"
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(img/SUUNTO-3-GPS.png);
+                  "
                 >
                   <img
-                    src="/img/slider05.png"
+                    data-src="img/slider05.png"
                     alt=""
-                    class="entity-img"
+                    class="entity-img lazyload"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
@@ -541,20 +583,27 @@
                 </div>
                 <div
                   class="swiper-slide"
-                  style="background-image: url(/img/suunto3_work_meeting4.jpg)"
+                  style="
+                    background-image: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 1) 100%
+                      ),
+                      url(img/suunto3_work_meeting4.jpg);
+                  "
                 >
                   <img
-                    src="/img/slider06.png"
+                    data-src="img/slider06.png"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
                     alt=""
-                    class="entity-img"
+                    class="entity-img lazyload"
                   />
                   <div class="content" data-swiper-parallax-opacity="0">
                     <div class="miniTitle">了解您的健康狀況</div>
                     <p
-                      class="title"
+                      class="title title--offset"
                       data-swiper-parallax="-30%"
                       data-swiper-parallax-scale=".7"
                     >
@@ -574,16 +623,16 @@
                         rgba(0, 0, 0, 0) 50%,
                         rgba(0, 0, 0, 1) 100%
                       ),
-                      url(/img/suunto3_suunto_app_sharing3.jpg);
+                      url(img/suunto3_suunto_app_sharing3.jpg);
                   "
                 >
                   <img
-                    src="/img/SUUNTO-3-CUSTOM-Mode.png"
+                    data-src="img/SUUNTO-3-CUSTOM-Mode.png"
                     data-swiper-parallax-y="-30%"
                     data-swiper-parallax-scale="0.8"
                     data-swiper-parallax-opacity="0"
                     alt=""
-                    class="entity-img entity-img--lastChild"
+                    class="entity-img entity-img--lastChild lazyload"
                   />
                   <div class="content" data-swiper-parallax-opacity="0">
                     <div class="miniTitle">讓腕錶更符合需求</div>
@@ -612,23 +661,45 @@
 
         <section class="recovery" id="activity-recovery">
           <div class="sectionTitle">保持活動與恢復的平衡</div>
-          <div class="flexContainer flexContainer--fullScreen">
+          <div
+            id="cg2"
+            class="flexContainer flexContainer--fullScreen cornerContainer"
+          >
             <div class="corner corner--top-right-bevel">
-              <span class="iconfont icon_play-circle-solid">
-                <div class="title">【生活校正】</div>
-                <div class="subtitle">保持 活動與恢復 的平衡</div>
-              </span>
+              <a
+                href="https://youtu.be/CssxvJKIL80?autoplay=1"
+                class="venobox"
+                data-type="youtube"
+                data-gall="gall-video"
+              >
+                <span class="iconfont icon_play-circle-solid">
+                  <div class="title">【生活校正】</div>
+                  <div class="subtitle">保持 活動與恢復 的平衡</div>
+                </span>
+              </a>
               <img
-                src="/img/maintain-a-balance-between-activity-and-recovery.jpg"
+                data-src="img/maintain-a-balance-between-activity-and-recovery.jpg"
                 alt=""
+                class="lazyload"
               />
             </div>
             <div class="corner corner--bottom-left-bevel">
-              <span class="iconfont icon_play-circle-solid">
-                <div class="title proxima">【SUUNTO APP】</div>
-                <div class="subtitle">豐富您的使用體驗</div>
-              </span>
-              <img src="/img/suunto3_app_sleep_summary.jpg" alt="" />
+              <a
+                href="https://youtu.be/CssxvJKIL80?autoplay=1"
+                class="venobox"
+                data-type="youtube"
+                data-gall="gall-video"
+              >
+                <span class="iconfont icon_play-circle-solid">
+                  <div class="title proxima">【SUUNTO APP】</div>
+                  <div class="subtitle">豐富您的使用體驗</div>
+                </span>
+              </a>
+              <img
+                data-src="img/suunto3_app_sleep_summary.jpg"
+                alt=""
+                class="lazyload"
+              />
             </div>
           </div>
         </section>
@@ -645,7 +716,11 @@
                       !
                     </p>
                   </div>
-                  <img src="img/recovery-watch-01.png" alt="" />
+                  <img
+                    data-src="img/recovery-watch-01.png"
+                    alt=""
+                    class="lazyload"
+                  />
                 </div>
                 <div class="slide-right">
                   <img class="slide-image" src="img/recovery_slide_4_m.png" />
@@ -657,12 +732,16 @@
                 <div class="slide-left">
                   <div class="slide-txt">
                     <h3>輕鬆應付每日的壓力</h3>
-                    <h2>【活力】水準</h2>
+                    <h2 class="offsetLeft">【活力】水準</h2>
                     <p>
-                      【活力】反映您處理壓力和應付日常挑戰的能力。當【活力】不足時，休息能讓您得到恢復。
+                      【活力】反映您處理壓力和應付日常挑戰的能力。<br />當【活力】不足時，休息能讓您得到恢復。
                     </p>
                   </div>
-                  <img src="img/recovery-watch-02.png" alt="" />
+                  <img
+                    data-src="img/recovery-watch-02.png"
+                    alt=""
+                    class="lazyload"
+                  />
                 </div>
                 <div class="slide-right">
                   <img class="slide-image" src="img/recovery_slide_3_m.png" />
@@ -674,12 +753,16 @@
                 <div class="slide-left">
                   <div class="slide-txt">
                     <h3>了解您目前的狀態</h3>
-                    <h2>【疲勞壓力】與【恢復狀態】</h2>
+                    <h2 class="offsetLeft">【疲勞壓力】與【恢復狀態】</h2>
                     <p>
                       根據您的心率變化，分析目前的【疲勞壓力】與【恢復狀態】，顯示【活力】水準。讓您在「生活」、「運動」與「恢復」之間保持平衡，迎向精彩的每一天。
                     </p>
                   </div>
-                  <img src="img/recovery-watch-03.png" alt="" />
+                  <img
+                    data-src="img/recovery-watch-03.png"
+                    alt=""
+                    class="lazyload"
+                  />
                 </div>
                 <div class="slide-right">
                   <img class="slide-image" src="img/recovery_slide_2_m.png" />
@@ -698,36 +781,23 @@
                       監測您的睡眠品質，在【睡眠摘要】中，檢視您每日的睡眠時數、品質，以及活力的恢復狀況。
                     </p>
                   </div>
-                  <img src="img/recovery-watch-04.png" alt="" />
+                  <img
+                    data-src="img/recovery-watch-04.png"
+                    alt=""
+                    class="lazyload"
+                  />
                 </div>
                 <div class="slide-right">
                   <img class="slide-image" src="img/recovery_slide_1_m.png" />
                 </div>
               </div>
             </div>
-            <!-- <div id="mct" class="slide">
-              <div class="slide-wrapper">
-                <div class="slide-left">
-                  <div class="slide-txt">
-                    <h2>月經週期追蹤</h2>
-                    <p>
-                      姊妹們的專屬功能！輕鬆記錄經期開始和結束日期、生理與心理症狀，以及個人狀態心情備註等週期細節，手腕上就能讀取週期資訊。
-                    </p>
-                  </div>
-                </div>
-                <div class="slide-right">
-                  <img class="slide-image" src="img/product_slide_5_m.png" />
-                </div>
-              </div>
-            </div> -->
           </div>
         </section>
         <section class="smart-assistant wow fadeIn" data-wow-duration="1s">
           <div class="flexContainer flexContainer--fullScreen">
-            <div style="background-image: url(./img/suunto3_social3.jpg)"></div>
-            <div
-              style="background-image: url(./img/suunto3_commute2.jpg)"
-            ></div>
+            <div style="background-image: url(img/suunto3_social3.jpg)"></div>
+            <div style="background-image: url(img/suunto3_commute2.jpg)"></div>
           </div>
 
           <div
@@ -735,46 +805,56 @@
             class="wrapper"
             style="background-color: #f7f7f7"
           >
-            <div class="sectionTitle">豐富您的使用體驗</div>
+            <div class="sectionTitle">SUUNTO APP 豐富您的使用體驗</div>
             <div class="subTitle">
-              雲端運動平台圖形化介面，一眼立即捕捉個人活動概況、追蹤目標進度，超簡單！
+              Suunto App免費下載，隨時提供服務。在Suunto App
+              上的各項分析工具與使用技巧，支持和鼓勵您，勇於實現您個人的目標。
             </div>
             <div class="flexContainer">
               <div class="btn btn--outline">了解更多</div>
             </div>
-            <img src="/img/Group747-2x.png" alt="" />
+            <img data-src="img/Group747-2x.png" alt="" class="lazyload" />
           </div>
 
           <div class="wrapper">
-            <div class="sectionTitle">延伸您的運動體驗</div>
+            <div class="sectionTitle">SUUNTO PARTNERS 延伸您的運動體驗</div>
             <div class="subTitle">
               經由 Suunto App 輕鬆連接到
-              Strava、TrainingPeaks、Endomondo…等知名的運動社群，參與其中的各種挑戰，從志同道合的朋友中，獲得您【體適能】目標的支援，並和他們分享運動的美好時光
+              Strava、TrainingPeaks、Endomondo…等知名的運動社群，參與其中的各種挑戰，從志同道合的朋友中，獲得您【體適能】目標的支援，並和他們分享運動的美好時光。
             </div>
             <div class="flexContainer">
-              <div class="btn btn--outline">了解更多Value Pack</div>
               <div class="btn btn--outline">了解更多partners</div>
             </div>
-            <img src="/img/Group746-2x.png" alt="" />
-          </div>
-          <div
-            class="flexContainer flexContainer--fullScreen flexContainer--fullHeight"
-          >
-            <div style="background-image: url(./img/suunto3_social4.jpg)"></div>
+            <img
+              data-src="img/Group746-2x.png"
+              alt=""
+              class="lazyload smallerImg"
+            />
           </div>
         </section>
       </article>
+      <div id="GOTOP">
+        <span class="iconfont icon_chevron-up-light"></span>
+      </div>
     </main>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery-migrate-1.4.1.min.js"
+    ></script>
+
     <script type="text/javascript" src="js/wow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js"></script>
-    <script src="js/scroll/TweenMax.min.js"></script>
+    <!-- <script src="js/scroll/TweenMax.min.js"></script> -->
     <script src="js/scroll/ScrollMagic.min.js"></script>
     <script src="js/scroll/animation.gsap.min.js"></script>
-    <script src="js/scroll/ScrollToPlugin.min.js"></script>
+    <!-- <script src="js/scroll/ScrollToPlugin.min.js"></script> -->
     <script src="js/scroll/debug.addIndicators.min.js"></script>
     <script src="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <script src="js/venobox.min.js"></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>

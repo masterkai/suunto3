@@ -51,24 +51,24 @@ function moveImages(e) {
     })
   } else {
     if (xPos < 0) {
-      perspective.src = '/img/SUUNTO-3-SLATE-GREY-COPPER-Perspective-View.png'
-      front.src = '/img/SUUNTO-3-GRANITE-RED-Front-View.png'
-      hgLeftL.src = '/img/suunto3_on-wrist_weekly_training_plan.jpg'
-      hgLeftM.src = '/img/suunto3_social3.jpg'
-      hgLeftS.src = '/img/suunto3_work_meeting5.jpg'
-      hgRightL.src = '/img/suunto3_on-wrist_watchface_coffee3.jpg'
-      hgRightM.src = '/img/suunto3_work_meeting4.jpg'
-      hgRightS.src = '/img/suunto3_social9.jpg'
+      perspective.src = 'img/SUUNTO-3-SLATE-GREY-COPPER-Perspective-View.png'
+      front.src = 'img/SUUNTO-3-GRANITE-RED-Front-View.png'
+      hgLeftL.src = 'img/suunto3_on-wrist_weekly_training_plan.jpg'
+      hgLeftM.src = 'img/suunto3_social3.jpg'
+      hgLeftS.src = 'img/suunto3_work_meeting5.jpg'
+      hgRightL.src = 'img/suunto3_on-wrist_watchface_coffee3.jpg'
+      hgRightM.src = 'img/suunto3_work_meeting4.jpg'
+      hgRightS.src = 'img/suunto3_social9.jpg'
       header.style.backgroundColor = '#FBECEC'
     } else {
-      perspective.src = '/img/SUUNTO-3-SLATE-GREY-Perspective-View.png'
-      front.src = '/img/SUUNTO-3-MOSS-GREY-Front-View.png'
-      hgLeftL.src = '/img/suunto3_swim4_4x5.jpg'
-      hgLeftM.src = '/img/suunto3_commute5.jpg'
-      hgLeftS.src = '/img/suunto3_commute2.jpg'
-      hgRightL.src = '/img/suunto3_run5.jpg'
-      hgRightM.src = '/img/suunto3_run3.jpg'
-      hgRightS.src = '/img/suunto3_run4.jpg'
+      perspective.src = 'img/SUUNTO-3-SLATE-GREY-Perspective-View.png'
+      front.src = 'img/SUUNTO-3-MOSS-GREY-Front-View.png'
+      hgLeftL.src = 'img/suunto3_swim4_4x5.jpg'
+      hgLeftM.src = 'img/suunto3_commute5.jpg'
+      hgLeftS.src = 'img/suunto3_commute2.jpg'
+      hgRightL.src = 'img/suunto3_run5.jpg'
+      hgRightM.src = 'img/suunto3_run3.jpg'
+      hgRightS.src = 'img/suunto3_run4.jpg'
       header.style.backgroundColor = '#F4F4F4'
     }
 
@@ -126,7 +126,7 @@ const options = {
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: null,
   },
 
   // Navigation arrows
@@ -150,6 +150,7 @@ const mySwiper = new Swiper(sliderSelector01, options)
 mySwiper.init()
 
 const activeTitle = document.getElementById('activeTitle')
+const GotoSportsNeeds = document.getElementById('sports-needs')
 const sliderContainer02 = document.querySelector('.swiper-container02')
 const sliderSelector02 = '.swiper-container02'
 const options2 = {
@@ -184,10 +185,6 @@ const options2 = {
     768: {
       slidesPerView: 2, // or 'auto'
       spaceBetween: 50,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
     },
   },
   // Events
@@ -209,7 +206,10 @@ const options2 = {
 const mySwiper2 = new Swiper(sliderSelector02, options2)
 
 mySwiper2.init()
-
+GotoSportsNeeds.addEventListener('click', () => {
+  // console.log('goto mySwiper2')
+  mySwiper2.slideTo('5', 1000, false)
+})
 const app = Vue.createApp({
   data() {
     return {
@@ -217,49 +217,77 @@ const app = Vue.createApp({
         {
           name: 'iconfont icon_activity_tracker',
           feature: '全天候活動監測',
-          img: '/img/features_activity_tracker.png',
+          img: 'img/features_activity_tracker.png',
         },
         {
           name: 'iconfont icon_adaptive_training_guidance',
           feature: '智能導引訓練',
-          img: '/img/features_adaptive_training_guidance.png',
+          img: 'img/features_adaptive_training_guidance.png',
         },
         {
           name: 'iconfont icon_fitness_level',
           feature: '體適能水準',
-          img: '/img/features_fitness_level.png',
-        },
-        {
-          name: 'iconfont icon_sleep',
-          feature: '睡眠品質監測',
-          img: '/img/features_sleep.png',
-        },
-        {
-          name: 'iconfont icon_wireless_mobile_connection',
-          feature: '連接手機GPS',
-          img: '/img/features_wireless_mobile_connection.png',
-        },
-        {
-          name: 'iconfont icon_water_resistant_30m',
-          feature: '水下30米防水等級',
-          img: '/img/features_water_resistant_30m.png',
-        },
-        {
-          name: 'iconfont icon_wrist_based_heart_rate',
-          feature: '腕式光學心率',
-          img: '/img/features_wrist_based_heart_rate.png',
+          img: 'img/features_fitness_level.png',
         },
         {
           name: 'iconfont icon_stress',
           feature: '疲勞壓力與恢復狀態',
-          img: '/img/features_stress.png',
+          img: 'img/features_stress.png',
+        },
+        {
+          name: 'iconfont icon_sleep',
+          feature: '睡眠品質監測',
+          img: 'img/features_sleep.png',
+        },
+        {
+          name: 'iconfont icon_wireless_mobile_connection',
+          feature: '連接手機GPS',
+          img: 'img/features_wireless_mobile_connection.png',
+        },
+        {
+          name: 'iconfont icon_wrist_based_heart_rate',
+          feature: '腕式光學心率',
+          img: 'img/features_wrist_based_heart_rate.png',
+        },
+        {
+          name: 'iconfont icon_water_resistant_30m',
+          feature: '水下30米防水等級',
+          img: 'img/features_water_resistant_30m.png',
         },
       ],
-      original: '/img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png',
-      imgSRC: '/img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png',
+      original: 'img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png',
+      imgSRC: 'img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png',
     }
   },
   methods: {
+    initFeatures() {
+      const features = gsap.utils.toArray('.flexContainer--feature .feature')
+      const featuresReverse = gsap.utils
+        .toArray('.flexContainer--feature .feature')
+        .reverse()
+
+      function featuresAnimation(direction) {
+        console.log(direction)
+        const scrollingDown = direction === 1
+        const buttons = scrollingDown ? features : featuresReverse
+        return gsap.to(buttons, {
+          duration: 0.3,
+          stagger: 0.05,
+          autoAlpha: () => (scrollingDown ? 1 : 0),
+          y: () => (scrollingDown ? 0 : 80),
+          ease: 'Power4.out',
+        })
+      }
+      ScrollTrigger.create({
+        trigger: '#features',
+        start: '100px 200px',
+        end: '10% 300px',
+        onEnter: ({ direction }) => featuresAnimation(direction),
+        onLeaveBack: ({ direction }) => featuresAnimation(direction),
+        markers: false,
+      })
+    },
+
     changeFeature(img) {
       this.imgSRC = img
     },
@@ -267,12 +295,17 @@ const app = Vue.createApp({
       this.imgSRC = this.original
     },
   },
+  mounted() {
+    console.log(`mounted !`)
+    this.initFeatures()
+  },
 })
 
 app.mount('#features')
 
 $(function () {
-  // stiky nav
+  $('.venobox').venobox()
+  /**stiky nav */
   const nav = document.querySelector('nav')
   const topofNav = nav.offsetTop
   function fixNav() {
@@ -287,6 +320,33 @@ $(function () {
 
   window.addEventListener('scroll', fixNav)
 
+  /**end of sticky nav */
+
+  /**  smooth scroll  **/
+  $("nav ul li a[href^='#']").on('click', function (e) {
+    // prevent default anchor click behavior
+    e.preventDefault()
+
+    // store hash
+    var hash = this.hash
+
+    // animate
+    $('html, body').animate(
+      {
+        scrollTop: $(this.hash).offset().top - 50,
+      },
+      700,
+      function () {
+        // when done, add hash to url
+        // (default click behaviour)
+        window.location.hash = hash
+      }
+    )
+  })
+
+  /**scrollspy */
+  $('#nav').scrollspy({ offset: -75 })
+
   var windowWidth = $(window).width()
   var windowHeight = $(window).height()
 
@@ -297,59 +357,98 @@ $(function () {
     addIndicators: false,
   })
 
+  const cornerContainers = document.querySelectorAll('.cornerContainer')
+  cornerContainers.forEach(function (item) {
+    console.log('this', item.getAttribute('id'))
+    const cornerID = '#' + item.getAttribute('id')
+    var parallaxTl = gsap.timeline()
+    parallaxTl
+      .from(
+        `${cornerID} .corner .venobox span`,
+        0.4,
+        { scale: 1.2, y: '80%', opacity: 0, ease: Power0.easeNone },
+        1
+      )
+      .from(
+        `${cornerID} .corner img`,
+        2,
+        { y: '-50%', ease: Power0.easeNone },
+        0
+      )
+
+    var slideParallaxScene = new ScrollMagic.Scene({
+      triggerElement: cornerID,
+      triggerHook: 1,
+      offset: '-50%',
+      duration: '100%',
+    })
+      .setTween(parallaxTl)
+      // .addIndicators({
+      //   name: cornerID,
+      //   indent: 0,
+      // })
+      .addTo(controller)
+  })
+
   $('#product-common-1 .slide').each(function () {
     var featuresId = '#' + $(this).attr('id')
     var featuresFirstId =
       '#' +
       $('#product-common-1 #slideContainer>.slide:first-child()').attr('id')
-    var features = new TimelineMax({
+    var features = gsap.timeline({
       repeat: 0,
     })
 
     if ($(window).width() >= 1024) {
       features
-        .to($('.slide .slide-right'), 1, { display: 'none', opacity: 0 }, 1)
+        .to('.slide .slide-right', 2, { display: 'none', opacity: 0 }, 0)
         .to(
-          $(featuresId + ' .slide-right'),
+          `${featuresId} .slide-right`,
           1,
           { display: 'block', opacity: 1 },
           1
         )
 
       var featuresScene = new ScrollMagic.Scene({
+        triggerHook: 0.5,
         triggerElement: featuresId,
-        offset: -$(featuresId).height() / 1.3,
-        duration: $(featuresId).height(),
+        offset: -$(featuresId).height() / 4,
+        duration: $(featuresId).height() / 4,
       })
         .setTween(features)
+        // .addIndicators({
+        //   indent: 0,
+        // })
         .addTo(controller)
     } else {
       features
         .to(
-          $('.slide .slide-right, .slide .slide-left'),
+          '.slide .slide-right, .slide .slide-left',
           1,
-          { display: 'none', opacity: 0 },
+          { display: 'none', opacity: 0, ease: 'Power4.inOut' },
           1
         )
         .to(
-          $(featuresId + ' .slide-right, ' + featuresId + ' .slide-left'),
+          `${featuresId} .slide-right, ${featuresId} .slide-left`,
           1,
-          { display: 'block', opacity: 1 },
+          { display: 'block', opacity: 1, ease: 'Power4.inOut' },
           1
         )
 
       var featuresScene = new ScrollMagic.Scene({
         triggerElement: featuresId,
-        offset: -$(featuresId).height() / 5,
+        offset: -$(featuresId).height() / 3,
         duration: $(featuresId).height(),
       })
         .setTween(features)
-        // .addIndicators()
+        // .addIndicators({
+        //   indent: 40,
+        // })
         .addTo(controller)
     }
   })
 
-  var leaveFeaturesInfo = new TimelineMax({
+  var leaveFeaturesInfo = gsap.timeline({
     repeat: 0,
   })
 
@@ -363,9 +462,14 @@ $(function () {
       duration: $('#sleep').height() * 2.2,
     })
       .setTween(leaveFeaturesInfo)
+      // .addIndicators({
+      //   name: 'leaveFeaturesInfoScene',
+      //   indent: 40,
+      // })
       .triggerHook('onLeave')
       .addTo(controller)
   } else {
+    console.log('we are less than 1024')
     leaveFeaturesInfo.to(
       '#product-common-1 #slideContainer .slide .slide-wrapper>* ',
       1,
@@ -380,4 +484,51 @@ $(function () {
       .triggerHook('onLeave')
       .addTo(controller)
   }
+
+  $('#GOTOP').click(function () {
+    jQuery('html,body').animate(
+      {
+        scrollTop: 0,
+      },
+      400
+    )
+  })
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 120) {
+      $('#GOTOP').fadeIn(300).addClass('active')
+    } else {
+      $('#GOTOP').stop().fadeOut(300).removeClass('active')
+    }
+  })
 })
+
+const mq = window.matchMedia('(max-width: 768px)')
+
+mq.addListener(handleWidthChange)
+handleWidthChange(mq)
+function handleWidthChange(mq) {
+  if (mq.matches) {
+    zdepthChange()
+    console.log('we are on')
+  } else {
+    console.log('we are not on')
+  }
+}
+
+function zdepthChange() {
+  $(window).scroll(() => {
+    var $window = $(window)
+    var scroll = $window.scrollTop() + $window.height() + 200
+    if (
+      scroll > $('#product-common-1').position().top &&
+      scroll < $('.smart-assistant').position().top + 800
+    ) {
+      // alert('over #product-common-1')
+      $('#product-common-1').find('.slide-left').css('z-index', 2)
+      $('#product-common-1').find('.slide-right').css('z-index', 1)
+    } else {
+      $('#product-common-1').find('.slide-left').css('display', 'none')
+      $('#product-common-1').find('.slide-right').css('display', 'none')
+    }
+  })
+}

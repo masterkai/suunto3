@@ -1,24 +1,26 @@
 .features {
+  $watchSize: 500px;
   padding: 60px 0;
   background-color: $featuresBG;
   .flexContainer {
     align-items: center;
     .watch {
-      @include breakpoint("xs") {
+      @include breakpoint('xs') {
+        background-size: 82%;
         max-height: 100%;
         width: 100%;
         flex: unset;
         margin-bottom: -50px;
       }
       flex: 0 1 50%;
-      height: 500px;
-      width: 500px;
+      height: $watchSize;
+      width: $watchSize;
       background-position: center;
-      background-size: 78%;
+      background-size: 68%;
       background-repeat: no-repeat;
     }
     .contentBox {
-      @include breakpoint("xs") {
+      @include breakpoint('xs') {
         flex: 1 1 100%;
         padding: 0 20px;
         text-align: center;
@@ -28,20 +30,26 @@
         font-size: 2.875rem;
       }
       .title {
+        @include breakpoint('xs') {
+          font-size: 1.65rem;
+          margin-bottom: 40px;
+        }
+        line-height: 1.375;
         font-size: 2.375rem;
         color: $title;
+        margin-bottom: 20px;
       }
       p {
         max-width: 600px;
       }
     }
     &--featureTop {
-      @include breakpoint("xs") {
+      @include breakpoint('xs') {
         flex-direction: column-reverse;
       }
     }
     &--feature {
-      @include breakpoint("xs") {
+      @include breakpoint('xs') {
         justify-content: space-evenly;
         padding: 0 20px;
       }
@@ -49,7 +57,7 @@
       align-items: flex-start;
       flex-wrap: wrap;
       .feature {
-        @include breakpoint("xs") {
+        @include breakpoint('xs') {
           flex: 1 1 25%;
         }
         &:hover {
@@ -64,17 +72,17 @@
         justify-content: center;
         align-items: center;
         span {
-          @include breakpoint("xs") {
+          @include breakpoint('xs') {
             font-size: 4rem;
           }
           color: inherit;
-          font-size: 6rem;
+          font-size: 5rem;
         }
         .desc {
-          font-size: 1.135rem;
+          font-size: 1rem;
           line-height: 1.375;
           text-align: center;
-          max-width: 94px;
+          max-width: 112px;
           color: inherit;
         }
       }
