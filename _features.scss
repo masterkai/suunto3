@@ -1,91 +1,95 @@
 .features {
-  $watchSize: 500px;
-  padding: 60px 0;
-  background-color: $featuresBG;
-  .flexContainer {
-    align-items: center;
-    .watch {
-      @include breakpoint('xs') {
-        background-size: 82%;
-        max-height: 100%;
-        width: 100%;
-        flex: unset;
-        margin-bottom: -50px;
-      }
-      flex: 0 1 50%;
-      height: $watchSize;
-      width: $watchSize;
-      background-position: center;
-      background-size: 68%;
-      background-repeat: no-repeat;
-    }
-    .contentBox {
-      @include breakpoint('xs') {
-        flex: 1 1 100%;
-        padding: 0 20px;
-        text-align: center;
-      }
-      flex: 0 1 50%;
-      .watchName {
-        font-size: 2.875rem;
-      }
-      .title {
-        @include breakpoint('xs') {
-          font-size: 1.65rem;
-          margin-bottom: 40px;
-        }
-        line-height: 1.375;
-        font-size: 2.375rem;
-        color: $title;
-        margin-bottom: 20px;
-      }
-      p {
-        max-width: 600px;
-      }
-    }
-    &--featureTop {
-      @include breakpoint('xs') {
-        flex-direction: column-reverse;
-      }
-    }
-    &--feature {
-      @include breakpoint('xs') {
-        justify-content: space-evenly;
-        padding: 0 20px;
-      }
-      justify-content: space-around;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      .feature {
-        @include breakpoint('xs') {
-          flex: 1 1 25%;
-        }
-        &:hover {
-          transform: translateY(-20px);
-          color: #000;
-        }
-        transition: all 0.15s ease-out;
-        cursor: pointer;
-        color: $featureBtn;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    $watchSize: 500px;
+    padding: 60px 0;
+    background-color: $featuresBG;
+    .flexContainer {
         align-items: center;
-        span {
-          @include breakpoint('xs') {
-            font-size: 4rem;
-          }
-          color: inherit;
-          font-size: 5rem;
+
+        .watch {
+            @include breakpoint('xs') {
+                background-size: 82%;
+                max-height: 100%;
+                width: 100%;
+                flex: unset;
+                margin-bottom: -50px;
+            }
+
+            flex: 0 1 50%;
+            height: $watchSize;
+            width: $watchSize;
+            background-position: center;
+            background-size: 68%;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease-in;
         }
-        .desc {
-          font-size: 1rem;
-          line-height: 1.375;
-          text-align: center;
-          max-width: 112px;
-          color: inherit;
+
+        .contentBox {
+            @include breakpoint('xs') {
+                flex: 1 1 100%;
+                padding: 0 20px;
+                text-align: center;
+            }
+            flex: 0 1 50%;
+            .watchName {
+                font-size: 2.875rem;
+            }
+            .title {
+                @include breakpoint('xs') {
+                    font-size: 1.65rem;
+                    margin-bottom: 40px;
+                }
+                line-height: 1.375;
+                font-size: 2.375rem;
+                color: $title;
+                margin-bottom: 20px;
+            }
+            p {
+                max-width: 600px;
+            }
         }
-      }
+        &--featureTop {
+            @include breakpoint('xs') {
+                flex-direction: column-reverse;
+            }
+        }
+        &--feature {
+            @include breakpoint('xs') {
+                justify-content: space-evenly;
+                padding: 0 20px;
+            }
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            .feature {
+                @include breakpoint('xs') {
+                    flex: 1 1 25%;
+                }
+                &:hover {
+                    transform: translateY(-20px);
+                    color: #000;
+                }
+                transition: all 0.15s ease-out;
+                cursor: pointer;
+                color: $featureBtn;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                span {
+                    @include breakpoint('xs') {
+                        font-size: 4rem;
+                    }
+                    color: inherit;
+                    font-size: 5rem;
+                }
+                .desc {
+                    font-size: 1rem;
+                    line-height: 1.375;
+                    text-align: center;
+                    max-width: 112px;
+                    color: inherit;
+                }
+            }
+        }
     }
-  }
 }
