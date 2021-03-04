@@ -1,125 +1,129 @@
 #product-common-1 {
-  position: relative;
-  #slideContainer {
-    .slide {
-      background-color: $featuresBG;
-      .slide-wrapper {
-        @include breakpoint('xs') {
-          flex-direction: column;
-        }
-        height: 100vh;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        .slide-left {
-          @include breakpoint('xs') {
-            padding: 0;
-            position: fixed;
-            width: 100%;
-            max-width: inherit;
-            left: 0%;
-            bottom: -28px;
-            opacity: 0;
-            text-align: center;
-          }
-          .slide-txt {
-            h3 {
-              @include breakpoint('xs') {
-                background-color: #fff;
-                padding: 2px 18px;
-                width: fit-content;
-                border-radius: 50px;
-                margin: 10px auto;
-              }
-              color: inherit;
-              margin-bottom: 7px;
-            }
-            h2 {
-              &.offsetLeft {
-                @include breakpoint('xs') {
-                  transform: none;
-                }
-                transform: translateX(-10px);
-              }
-              @include breakpoint('xs') {
-                font-size: 1.5rem;
-                background-color: #fff;
-                padding: 10px;
-                width: fit-content;
-                border-radius: 10px;
-                margin: 0 auto;
-              }
-              font-size: 1.75rem;
-              color: inherit;
-              line-height: 1.2;
-              margin-bottom: 18px;
-            }
-            p {
-              @include breakpoint('xs') {
-                padding: 10px;
-                font-size: 1rem;
-                color: #000;
-                background-color: $featuresBG;
-                width: 100%;
-              }
-              font-size: 1.2rem;
-              color: inherit;
-            }
-          }
-          img {
-            @include breakpoint('xs') {
-              width: 80%;
-            }
-            max-width: 100%;
-            max-height: 100%;
-            width: 80%;
-            height: auto;
-            flex: 0 1 auto;
-          }
-          display: flex;
-          flex-direction: column;
-          max-width: 40%;
-          z-index: 1;
-          color: $title;
-          position: relative;
-          padding: 4vw;
-        }
-        .slide-right {
-          @include breakpoint('xs') {
-            background: $featuresBG;
-            height: 50vh;
-            top: auto;
-            right: 0;
-            -webkit-transform: none;
-            -ms-transform: none;
-            transform: none;
-            top: 9vw;
-            width: 100%;
-            position: fixed;
-          }
-          // transition: opacity 0.25s ease-in-out;
-          background: #fff;
-          position: fixed;
-          width: 50%;
-          height: 100vh;
-          top: 0%;
-          right: 0;
-          bottom: 0;
-          opacity: 0;
-          display: none;
-
-          img {
-            @include breakpoint('xs') {
-              right: 0;
-              top: 0;
-            }
-            max-width: 100%;
-            position: absolute;
-            right: 4vw;
-            top: 10vw;
-          }
-        }
-      }
+    @include breakpoint('xs') {
+        display: none;
     }
-  }
+    position: relative;
+    #slideContainer {
+        .slide {
+            background-color: $featuresBG;
+            .slide-wrapper {
+                @include breakpoint('xs') {
+                    flex-direction: column;
+                }
+                height: 100vh;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                .slide-left {
+                    @include breakpoint('xs') {
+                        padding: 0;
+                        position: fixed;
+                        width: 100%;
+                        max-width: inherit;
+                        left: 0%;
+                        bottom: -28px;
+                        opacity: 0;
+                        text-align: center;
+                    }
+                    .slide-txt {
+                        h3 {
+                            @include breakpoint('xs') {
+                                background-color: #fff;
+                                padding: 2px 18px;
+                                width: fit-content;
+                                border-radius: 50px;
+                                margin: 10px auto;
+                            }
+                            color: inherit;
+                            margin-bottom: 7px;
+                        }
+                        h2 {
+                            &.offsetLeft {
+                                @include breakpoint('xs') {
+                                    transform: none;
+                                }
+                                transform: translateX(-10px);
+                            }
+                            @include breakpoint('xs') {
+                                font-size: 1.5rem;
+                                background-color: #fff;
+                                padding: 10px;
+                                width: fit-content;
+                                border-radius: 10px;
+                                margin: 0 auto;
+                            }
+                            font-size: 1.75rem;
+                            color: inherit;
+                            line-height: 1.2;
+                            margin-bottom: 18px;
+                        }
+                        p {
+                            @include breakpoint('xs') {
+                                padding: 10px;
+                                font-size: 1rem;
+                                color: #000;
+                                background-color: $featuresBG;
+                                width: 100%;
+                            }
+                            font-size: 1.2rem;
+                            color: inherit;
+                        }
+                    }
+                    img {
+                        @include breakpoint('xs') {
+                            width: 80%;
+                        }
+                        max-width: 100%;
+                        max-height: 100%;
+                        width: 80%;
+                        height: auto;
+                        flex: 0 1 auto;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 40%;
+                    z-index: 1;
+                    color: $title;
+                    position: relative;
+                    padding: 4vw;
+                }
+                .slide-right {
+                    @include breakpoint('xs') {
+                        background: $featuresBG;
+                        height: 50vh;
+                        top: auto;
+                        right: 0;
+                        -webkit-transform: none;
+                        -ms-transform: none;
+                        transform: none;
+                        top: 9vw;
+                        width: 100%;
+                        position: fixed;
+                    }
+                    transition: opacity 0.25s ease-in-out;
+                    background: #fff;
+                    position: fixed;
+                    width: 50%;
+                    height: 100vh;
+                    top: 0%;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                    display: none;
+
+                    img {
+                        @include breakpoint('xs') {
+                            right: 0;
+                            top: 0;
+                        }
+                        max-width: 100%;
+                        position: absolute;
+                        right: 4vw;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
 }

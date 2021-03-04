@@ -1,65 +1,52 @@
 #header {
-  .product {
-    &__img {
-      &:nth-child(1) {
-        padding-right: 16vw;
-      }
-      &:nth-child(2) {
-        position: absolute;
-        left: 10vw;
-
-        img {
-          @include breakpoint('xs') {
-            width: 280px;
-          }
-          width: 520px;
+    .mainCopy {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        .group {
+            @include breakpoint('between') {
+                justify-content: center;
+                margin-right: unset;
+            }
+            @include breakpoint('xs') {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-20%);
+                padding: 0 40px;
+                margin-right: unset;
+                margin-bottom: 48px;
+            }
+            .copy {
+                margin-top: 24px;
+                max-width: 500px;
+            }
+            img {
+                width: 100%;
+            }
+            flex: 0 1 auto;
+            margin-right: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-      }
-      img {
+        @include breakpoint('between') {
+            justify-content: center;
+        }
         @include breakpoint('xs') {
-          width: 200px;
+            align-items: flex-end;
         }
-        width: 400px;
-      }
+    }
+    background-position: center top;
+    background-size: cover;
+    height: calc(100vh - 150px);
+    @include breakpoint('sm') {
+        background-image: url(../img/suunto3-banner-1920x960.png);
     }
     @include breakpoint('xs') {
-      margin-bottom: -30px;
+        background-image: url(../img/suunto3-banner-414x736.png);
+        height: 100vh;
     }
-    margin-bottom: -60px;
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
-  }
-  h1 {
-    font-family: var(--font-headings);
-    font-weight: normal;
-    color: #000;
-    font-size: 2rem;
-    line-height: 1.5;
-    z-index: 1;
-    margin-bottom: 0;
-    pointer-events: none;
-    text-align: center;
-    margin-bottom: 20px;
-    span {
-      display: block;
-    }
-    .fw7 {
-      @include breakpoint('xs') {
-        max-width: 210px;
-      }
-    }
-  }
-  background-color: $headerColor;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-direction: column;
-  perspective: 1000px;
-  z-index: 2;
 }

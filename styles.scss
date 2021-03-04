@@ -16,81 +16,21 @@
 @import './smart-assistant';
 @import './corner';
 @import './gotop';
+@import './recovery-sm';
 main {
-  z-index: 1;
-  position: relative;
+    z-index: 1;
+    position: relative;
 }
 
 .fw7 {
-  font-weight: 700;
+    font-weight: 700;
 }
 .bigger {
-  font-size: 2.75rem;
+    font-size: 2.75rem;
 }
 
-.hg__image,
-.rg__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  pointer-events: none;
-}
-.hg__image--l {
-  width: 18vw;
-  padding-bottom: 26vw;
-}
-.hg__image--m {
-  width: 18vw;
-  padding-bottom: 26.55vw;
-}
-.hg__image--s {
-  width: 13vw;
-  padding-bottom: 19vw;
-}
-.hg__image img,
-.rg__image img,
-.blog__image img,
-.stage__image img,
-.loader__image img {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
-  object-position: 50% 50%;
-  opacity: 0.8;
-}
-.hg__left .hg__image:nth-child(1) {
-  top: 10vh;
-  left: 15vw;
-}
-.hg__left .hg__image:nth-child(2) {
-  top: 30vh;
-  left: 6vw;
-}
-.hg__left .hg__image:nth-child(3) {
-  top: 56vh;
-  left: 14vw;
-}
-.hg__right .hg__image:nth-child(1) {
-  top: 8vh;
-  left: auto;
-  right: 17vw;
-  width: 16vw;
-  padding-bottom: 21vw;
-}
-.hg__right .hg__image:nth-child(2) {
-  top: 27vh;
-  left: auto;
-  right: 5vw;
-  z-index: 1;
-}
-.hg__right .hg__image:nth-child(3) {
-  top: 56vh;
-  left: auto;
-  right: 14vw;
-  width: 16vw;
-  padding-bottom: 20vw;
+#decoration {
+    @include breakpoint('xs') {
+        display: none;
+    }
 }

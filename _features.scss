@@ -6,6 +6,11 @@
         align-items: center;
 
         .watch {
+            &.active {
+                display: block;
+                opacity: 1;
+            }
+            display: none;
             @include breakpoint('xs') {
                 background-size: 82%;
                 max-height: 100%;
@@ -13,14 +18,14 @@
                 flex: unset;
                 margin-bottom: -50px;
             }
-
+            opacity: 0;
             flex: 0 1 50%;
             height: $watchSize;
             width: $watchSize;
             background-position: center;
             background-size: 68%;
             background-repeat: no-repeat;
-            transition: background-image 0.5s ease-in;
+            transition: opacity 0.5s ease-in;
         }
 
         .contentBox {
@@ -45,6 +50,7 @@
             }
             p {
                 max-width: 600px;
+                text-align: left;
             }
         }
         &--featureTop {
@@ -61,6 +67,9 @@
             align-items: flex-start;
             flex-wrap: wrap;
             .feature {
+                &.active {
+                    color: #000;
+                }
                 @include breakpoint('xs') {
                     flex: 1 1 25%;
                 }
@@ -70,7 +79,7 @@
                 }
                 transition: all 0.15s ease-out;
                 cursor: pointer;
-                color: $featureBtn;
+                color: lighten($featureBtn, 18%);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

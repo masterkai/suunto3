@@ -1,103 +1,8 @@
 gsap.registerPlugin(ScrollTrigger)
 
 function initHeaderTilt() {
-    document.querySelector('main').addEventListener('mousemove', moveImages)
-}
-
-function moveImages(e) {
-    const { offsetX, offsetY, target } = e
-    const { clientWidth, clientHeight } = target
-
-    // console.log(clientWidth, clientHeight);
-    const xPos = offsetX / clientWidth - 0.5
-    const yPos = offsetY / clientHeight - 0.5
-    const leftImage = gsap.utils.toArray('.hg__left .hg__image')
-    const rightImage = gsap.utils.toArray('.hg__right .hg__image')
-    const perspective = document.querySelector('.product__img__perspective img')
-    const front = document.querySelector('.product__img__FrontView img')
-    const hgLeftL = document.querySelector('.hg__left .hg__image--l img')
-    const hgLeftM = document.querySelector('.hg__left .hg__image--m img')
-    const hgLeftS = document.querySelector('.hg__left .hg__image--s img')
-    const hgRightL = document.querySelector('.hg__right .hg__image--l img')
-    const hgRightM = document.querySelector('.hg__right .hg__image--m img')
-    const hgRightS = document.querySelector('.hg__right .hg__image--s img')
-    const header = document.querySelector('header')
-
-    // console.log(target)
-    // console.log(target)
-    if (target !== header) {
-        header.style.backgroundColor = '#F4F4F4'
-
-        leftImage.forEach((image, index) => {
-            gsap.to(image, {
-                duration: 1.2,
-                x: 0,
-                y: 0,
-                rotationX: 0,
-                rotationY: 0,
-                ease: 'Power3.out'
-            })
-        })
-
-        rightImage.forEach((image, index) => {
-            gsap.to(image, {
-                duration: 1.2,
-                x: 0,
-                y: 0,
-                rotationX: 0,
-                rotationY: 0,
-                ease: 'Power3.out'
-            })
-        })
-    } else {
-        if (xPos < 0) {
-            perspective.src = 'img/SUUNTO-3-SLATE-GREY-COPPER-Perspective-View.png'
-            front.src = 'img/SUUNTO-3-GRANITE-RED-Front-View.png'
-            hgLeftL.src = 'img/suunto3_on-wrist_weekly_training_plan.jpg'
-            hgLeftM.src = 'img/suunto3_social3.jpg'
-            hgLeftS.src = 'img/suunto3_work_meeting5.jpg'
-            hgRightL.src = 'img/suunto3_on-wrist_watchface_coffee3.jpg'
-            hgRightM.src = 'img/suunto3_work_meeting4.jpg'
-            hgRightS.src = 'img/suunto3_social9.jpg'
-            header.style.backgroundColor = '#FBECEC'
-        } else {
-            perspective.src = 'img/SUUNTO-3-SLATE-GREY-Perspective-View.png'
-            front.src = 'img/SUUNTO-3-MOSS-GREY-Front-View.png'
-            hgLeftL.src = 'img/suunto3_swim4_4x5.jpg'
-            hgLeftM.src = 'img/suunto3_commute5.jpg'
-            hgLeftS.src = 'img/suunto3_commute2.jpg'
-            hgRightL.src = 'img/suunto3_run5.jpg'
-            hgRightM.src = 'img/suunto3_run3.jpg'
-            hgRightS.src = 'img/suunto3_run4.jpg'
-            header.style.backgroundColor = '#F4F4F4'
-        }
-
-        const modifier = index => index * 1.2 + 0.5
-
-        //move 3 left images
-        //get 0 0 in the middle screen
-        leftImage.forEach((image, index) => {
-            gsap.to(image, {
-                duration: 1.2,
-                x: xPos * 20 * modifier(index),
-                y: yPos * 30 * modifier(index),
-                rotationX: yPos * 10,
-                rotationY: xPos * 40,
-                ease: 'Power3.out'
-            })
-        })
-
-        rightImage.forEach((image, index) => {
-            gsap.to(image, {
-                duration: 1.2,
-                x: xPos * 20 * modifier(index),
-                y: -yPos * 30 * modifier(index),
-                rotationX: yPos * 10,
-                rotationY: xPos * 40,
-                ease: 'Power3.out'
-            })
-        })
-    }
+    console.log('Hello Suunto3')
+    const header = document.querySelector('#header')
 }
 
 function init() {
@@ -158,19 +63,11 @@ const options2 = {
     loop: true,
     speed: 800,
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 50,
     autoplay: {
         delay: 5000
     },
     centeredSlides: true,
-    effect: 'coverflow', // 'cube', 'fade', 'coverflow',
-    coverflowEffect: {
-        rotate: 50, // Slide rotate in degrees
-        stretch: 10, // Stretch space between slides (in px)
-        depth: 100, // Depth offset in px (slides translate in Z axis)
-        modifier: 1, // Effect multipler
-        slideShadows: true // Enables slides shadows
-    },
     grabCursor: true,
     parallax: true,
     pagination: {
@@ -183,7 +80,7 @@ const options2 = {
     },
     breakpoints: {
         768: {
-            slidesPerView: 2, // or 'auto'
+            slidesPerView: 1, // or 'auto'
             spaceBetween: 50
         }
     },
@@ -191,10 +88,14 @@ const options2 = {
     on: {
         transitionStart: function (params) {
             // console.log(this.realIndex);
-            if (this.realIndex < 3) {
-                activeTitle.textContent = '為您量身訂做的【智能訓練導引】'
+            if ($(window).width() < 768 && this.realIndex < 3) {
+                activeTitle.innerText = `為您量身訂做的
+                【智能訓練導引】
+                `
+            } else if ($(window).width() > 768 && this.realIndex < 3) {
+                activeTitle.innerText = `為您量身訂做的【智能訓練導引】`
             } else {
-                activeTitle.textContent = '滿足您全方位的運動需求'
+                activeTitle.innerText = '滿足您全方位的運動需求'
             }
         },
         imagesReady: function () {
@@ -217,42 +118,50 @@ const app = Vue.createApp({
                 {
                     name: 'iconfont icon_activity_tracker',
                     feature: '全天候活動監測',
-                    img: 'img/features_activity_tracker.png'
+                    img: 'img/features_activity_tracker.png',
+                    id: 0
                 },
                 {
                     name: 'iconfont icon_adaptive_training_guidance',
                     feature: '智能導引訓練',
-                    img: 'img/features_adaptive_training_guidance.png'
+                    img: 'img/features_adaptive_training_guidance.png',
+                    id: 1
                 },
                 {
                     name: 'iconfont icon_fitness_level',
                     feature: '體適能水準',
-                    img: 'img/features_fitness_level.png'
+                    img: 'img/features_fitness_level.png',
+                    id: 2
                 },
                 {
                     name: 'iconfont icon_stress',
                     feature: '疲勞壓力與恢復狀態',
-                    img: 'img/features_stress.png'
+                    img: 'img/features_stress.png',
+                    id: 3
                 },
                 {
                     name: 'iconfont icon_sleep',
                     feature: '睡眠品質監測',
-                    img: 'img/features_sleep.png'
+                    img: 'img/features_sleep.png',
+                    id: 4
                 },
                 {
                     name: 'iconfont icon_wireless_mobile_connection',
                     feature: '連接手機GPS',
-                    img: 'img/features_wireless_mobile_connection.png'
+                    img: 'img/features_wireless_mobile_connection.png',
+                    id: 5
                 },
                 {
                     name: 'iconfont icon_wrist_based_heart_rate',
                     feature: '腕式光學心率',
-                    img: 'img/features_wrist_based_heart_rate.png'
+                    img: 'img/features_wrist_based_heart_rate.png',
+                    id: 6
                 },
                 {
                     name: 'iconfont icon_water_resistant_30m',
                     feature: '水下30米防水等級',
-                    img: 'img/features_water_resistant_30m.png'
+                    img: 'img/features_water_resistant_30m.png',
+                    id: 7
                 }
             ],
             original: 'img/SUUNTO-3-SLATE-GREY-COPPER-Front-View.png',
@@ -286,14 +195,27 @@ const app = Vue.createApp({
             })
         },
 
-        changeFeature(img) {
-            this.imgSRC = img
+        changeFeature(id) {
+            // console.log(id)
+            const featuresArray = document.querySelectorAll('.features .flexContainer .watch')
+            const featuresBtnArray = document.querySelectorAll('.features .flexContainer--feature .feature')
+            console.log(featuresBtnArray)
+            featuresArray.forEach(item => item.classList.remove('active'))
+            featuresArray.forEach(item => (item.style.visibility = 'hidden'))
+            featuresArray.forEach(item => (item.style.animationName = 'none'))
+            featuresBtnArray.forEach(item => item.classList.remove('active'))
+            featuresArray[id].classList.add('active')
+            featuresBtnArray[id].classList.add('active')
+            featuresArray[id].style.visibility = 'visible'
+            featuresArray[id].style.animationName = 'fadeIn'
         },
         toOriginal() {
             this.imgSRC = this.original
         }
     },
     mounted() {
+        const featuresBtnArray = document.querySelectorAll('.features .flexContainer--feature .feature')
+        featuresBtnArray[0].classList.add('active')
         console.log(`mounted !`)
         this.initFeatures()
     }
@@ -384,68 +306,40 @@ $(function () {
             repeat: 0
         })
 
-        if ($(window).width() >= 1024) {
-            features.to('.slide .slide-right', 2, { display: 'none', opacity: 0 }, 0).to(`${featuresId} .slide-right`, 1, { display: 'block', opacity: 1 }, 1)
+        features.to('.slide .slide-right', 2, { display: 'none', opacity: 0 }, 0).to(`${featuresId} .slide-right`, 1, { display: 'block', opacity: 1 }, 1)
 
-            var featuresScene = new ScrollMagic.Scene({
-                triggerHook: 0.5,
-                triggerElement: featuresId,
-                offset: -$(featuresId).height() / 4,
-                duration: $(featuresId).height() / 4
-            })
-                .setTween(features)
-                // .addIndicators({
-                //   indent: 0,
-                // })
-                .addTo(controller)
-        } else {
-            features.to('.slide .slide-right, .slide .slide-left', 1, { display: 'none', opacity: 0, ease: 'Power4.inOut' }, 1).to(`${featuresId} .slide-right, ${featuresId} .slide-left`, 1, { display: 'block', opacity: 1, ease: 'Power4.inOut' }, 1)
-
-            var featuresScene = new ScrollMagic.Scene({
-                triggerElement: featuresId,
-                offset: -$(featuresId).height() / 3,
-                duration: $(featuresId).height()
-            })
-                .setTween(features)
-                // .addIndicators({
-                //   indent: 40,
-                // })
-                .addTo(controller)
-        }
+        var featuresScene = new ScrollMagic.Scene({
+            triggerHook: 0.15,
+            triggerElement: featuresId,
+            offset: -$(featuresId).height() / 4,
+            duration: $(featuresId).height() / 4
+        })
+            .setTween(features)
+            // .addIndicators({
+            //   indent: 0,
+            // })
+            .addTo(controller)
     })
 
     var leaveFeaturesInfo = gsap.timeline({
         repeat: 0
     })
 
-    if (windowWidth >= 1024) {
-        leaveFeaturesInfo.to('.slide .slide-right, .slide .slide-left ', 1, {
-            top: '-100vh'
-        })
+    leaveFeaturesInfo.to('.slide .slide-right, .slide .slide-left ', 1, {
+        top: '-100vh'
+    })
 
-        var leaveFeaturesInfoScene = new ScrollMagic.Scene({
-            triggerElement: '#sleep',
-            duration: $('#sleep').height() * 2.2
-        })
-            .setTween(leaveFeaturesInfo)
-            // .addIndicators({
-            //   name: 'leaveFeaturesInfoScene',
-            //   indent: 40,
-            // })
-            .triggerHook('onLeave')
-            .addTo(controller)
-    } else {
-        console.log('we are less than 1024')
-        leaveFeaturesInfo.to('#product-common-1 #slideContainer .slide .slide-wrapper>* ', 1, { opacity: 0 })
-
-        var leaveFeaturesInfoScene = new ScrollMagic.Scene({
-            triggerElement: '#sleep',
-            duration: ($(window).height() / 3) * 3
-        })
-            .setTween(leaveFeaturesInfo)
-            .triggerHook('onLeave')
-            .addTo(controller)
-    }
+    var leaveFeaturesInfoScene = new ScrollMagic.Scene({
+        triggerElement: '#sleep',
+        duration: $('#sleep').height() * 2.2
+    })
+        .setTween(leaveFeaturesInfo)
+        // .addIndicators({
+        //   name: 'leaveFeaturesInfoScene',
+        //   indent: 40,
+        // })
+        .triggerHook('onLeave')
+        .addTo(controller)
 
     $('#GOTOP').click(function () {
         jQuery('html,body').animate(
@@ -463,7 +357,7 @@ $(function () {
         }
     })
 })
-
+/* no use
 const mq = window.matchMedia('(max-width: 768px)')
 
 mq.addListener(handleWidthChange)
@@ -491,3 +385,4 @@ function zdepthChange() {
         }
     })
 }
+*/

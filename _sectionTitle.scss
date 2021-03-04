@@ -1,12 +1,23 @@
 .sectionTitle {
-  @include breakpoint('xs') {
-    font-size: 1.65rem;
-  }
-  font-family: 'proxima_novabold', serif;
-  font-weight: 700;
-  margin: 0 auto;
-  text-align: center;
-  color: $title;
-  padding: 20px;
-  font-size: 2.375rem;
+    .show-sm {
+        display: none;
+        @include breakpoint('xs') {
+            display: block;
+        }
+    }
+    @include breakpoint('xs') {
+        font-size: 1.65rem;
+    }
+    font-family: 'proxima_novabold', serif;
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+    color: $title;
+    padding: 20px;
+    font-size: 2.375rem;
+}
+#activeTitle {
+    @include breakpoint('xs') {
+        height: 128px;
+    }
 }
